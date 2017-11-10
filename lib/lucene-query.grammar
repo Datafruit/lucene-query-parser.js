@@ -234,7 +234,7 @@ unquoted_term
     }
 
 term_start_char
-  = '.' / term_escaping_char / [^: \t\r\n\f\{\}()"+-/^~\[\]]
+  = term_escaping_char / [^: \t\r\n\f\{\}()"+\-/^~\[\]]
 
 term_escaping_char
   = '\\' escaping_char:[: \t\r\n\f\{\}()"/^~\[\]]

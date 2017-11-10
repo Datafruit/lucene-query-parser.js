@@ -59,6 +59,12 @@ describe("lucenequeryparser: term parsing", function() {
         expect(results['left']['term']).toBe('>now-5d');
     });
 
+    it("accepts terms with ','", function() {
+      var results = lucenequeryparser.parse('pair:a,b');
+
+      expect(results['left']['term']).toBe('a,b');
+    });
+
     it("accepts terms with '+'", function() {
         var results = lucenequeryparser.parse('published_at:>now+5d');
 
